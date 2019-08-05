@@ -12,9 +12,9 @@ export default class Todo extends Component {
   render() {
     return (
       <>
-        <ul>
+        <ol>
           <li onClick={this.props.onClick}>{this.props.todo.task}</li>
-        </ul>
+        </ol>
       </>
     );
   }
