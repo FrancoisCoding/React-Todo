@@ -51,13 +51,25 @@ class App extends React.Component {
       }
     });
   };
+
+  deleteItem = id => {
+    console.log("deleted");
+    const filteredItems = this.state.todoData.filter(item => {
+      return item.id !== id;
+    });
+    this.setState({
+      todoData: filteredItems
+    });
+  };
+
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
       <div>
-        <TodoList toDoList={this.state.todoData} />
+        <h1>Tasks</h1>
+        <TodoList toDoList={this.state.todoData} deleteItem={this.deleteItem} />
         <TodoForm
           clear={this.clearTodos}
           add={this.addTodos}

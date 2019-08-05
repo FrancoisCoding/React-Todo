@@ -10,7 +10,11 @@ export default class TodoList extends Component {
     return (
       <div>
         {this.props.toDoList.map(todo => (
-          <Todo key={todo.id} todo={todo} />
+          <Todo
+            key={todo.id}
+            todo={todo}
+            onClick={() => this.props.deleteItem(todo.id)}
+          />
         ))}
       </div>
     );

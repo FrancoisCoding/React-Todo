@@ -10,6 +10,12 @@ export default class Todo extends Component {
     };
   }
   render() {
-    return <div>Tasks: {this.props.todo.task}</div>;
+    return (
+      <>
+        <ul>
+          <li onClick={this.props.onClick}>{this.props.todo.task}</li>
+        </ul>
+      </>
+    );
   }
 }
